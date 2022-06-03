@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".SmsVerification_Activity"
+	android:orientation="vertical">
+	
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:background="@drawable/layout_bottom_line"
+		android:layout_width="match_parent"
+		android:layout_height="75dp">
+		
+		<TextView
+			android:text="전화번호 인증"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			android:id="@+id/tv_MyCarrot"
+			app:layout_constraintHorizontal_bias="0.22"
+			android:textColor="@color/black"
+			android:textSize="20sp"/>
+		<ImageButton
+			android:layout_width="35dp"
+			android:layout_height="35dp"
+			android:background="@android:color/transparent"
+			android:scaleType="fitXY"
+			app:srcCompat="@drawable/baseline_arrow_back_36"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			android:id="@+id/ib_back"
+			app:layout_constraintEnd_toStartOf="@+id/tv_MyCarrot"
+			tools:srcCompat="@drawable/baseline_arrow_back_36"/>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+	
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_weight="0.1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<EditText
+			android:hint="휴대폰 번호 (-없이 숫자만 입력)"
+			android:layout_width="300dp"
+			android:layout_height="wrap_content"
+			android:inputType="phone"
+			android:ems="10"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			android:id="@+id/et_phonenumber"
+			app:layout_constraintVertical_bias="0.05"/>
+		<Button
+			android:text="인증문자 받기"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:backgroundTint="#FF7E36"
+			app:layout_constraintStart_toStartOf="@+id/et_phonenumber"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="@+id/et_phonenumber"
+			android:id="@+id/bt_get_verification_sms"
+			app:layout_constraintTop_toBottomOf="@+id/et_phonenumber"
+			app:layout_constraintVertical_bias="0.01"/>
+		<TextView
+			android:text="전화번호가 변경되었나요?"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintStart_toStartOf="@+id/bt_get_verification_sms"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			android:id="@+id/tv_explain"
+			app:layout_constraintTop_toBottomOf="@+id/bt_get_verification_sms"
+			app:layout_constraintVertical_bias="0.025"
+			app:layout_constraintHorizontal_bias="0.0"/>
+		<TextView
+			android:text="이메일로 계정찾기"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintBottom_toBottomOf="@+id/tv_explain"
+			app:layout_constraintEnd_toEndOf="@+id/bt_get_verification_sms"
+			android:id="@+id/tv_find_account"
+			app:layout_constraintStart_toEndOf="@+id/tv_explain"
+			app:layout_constraintHorizontal_bias="1.0"
+			app:layout_constraintTop_toTopOf="@+id/tv_explain"/>
+		<Button
+			android:text="인증번호 확인"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:backgroundTint="#FF7E36"
+			app:layout_constraintStart_toStartOf="@+id/et_phonenumber"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="@+id/et_phonenumber"
+			android:id="@+id/bt_checknum"
+			app:layout_constraintVertical_bias="0.01"
+			app:layout_constraintTop_toBottomOf="@+id/et_checknum"/>
+		<EditText
+			android:hint="인증번호를 입력해주세요"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:inputType="number"
+			android:ems="10"
+			app:layout_constraintStart_toStartOf="@+id/et_phonenumber"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="@+id/et_phonenumber"
+			android:id="@+id/et_checknum"
+			app:layout_constraintTop_toBottomOf="@+id/tv_explain"
+			app:layout_constraintVertical_bias="0.05"
+		/>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

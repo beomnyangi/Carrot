@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		  package="com.beom.carrot">
+	<!-- 위치정보 권한 설정 -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> <!-- 인터넷 권한 설정 -->
+	<uses-permission android:name="android.permission.INTERNET"/> <!-- 인터넷 연결 확인 -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> <!-- sms 전송을 권한 설정 -->
+	<uses-permission android:name="android.permission.RECEIVE_SMS"/>
+	<uses-permission android:name="android.permission.SEND_SMS"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/> <!-- 저장 파일에 접근하기 위한 퍼미션 설정 -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> <!-- 카메라 사용을 위한 퍼미션 설정 -->
+	<uses-feature
+		android:name="android.hardware.camera"
+		android:required="true"/>
+	
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:roundIcon="@mipmap/ic_launcher_round"
+		android:supportsRtl="true"
+		android:theme="@style/Theme.Carrot">
+		<activity
+			android:name=".ViewProfile_Activity"
+			android:exported="true"/>
+		<activity
+			android:name=".SalesHistoryList_Activity"
+			android:exported="true"/>
+		<activity
+			android:name=".MyWatchList_Activity"
+			android:exported="true"/>
+		<activity android:name=".EditProfile_Activity">
+		</activity>
+		<activity android:name=".ProfileSettings_Activity">
+		</activity>
+		
+		<provider
+			android:name="androidx.core.content.FileProvider"
+			android:authorities="com.beom.carrot.fileprovider"
+			android:exported="false"
+			android:grantUriPermissions="true">
+			<meta-data
+				android:name="android.support.FILE_PROVIDER_PATHS"
+				android:resource="@xml/file_paths"/>
+		</provider>
+		
+		<activity android:name=".SearchPost_Activity">
+		</activity>
+		<activity android:name=".MyCarrot_Activity">
+		</activity>
+		<activity android:name=".ViewUsedTradePost_Activity">
+		</activity>
+		<activity
+			android:name=".WriteUsedTradePost_Activity"
+			android:windowSoftInputMode="adjustPan">
+		</activity>
+		<activity android:name=".Home_Activity">
+		</activity>
+		<activity android:name=".SmsVerification_Activity">
+		</activity>
+		<activity android:name=".MyTest_Activity">
+		</activity>
+		<activity android:name=".SearchLocation_Activity">
+		</activity>
+		<activity android:name=".FirstRun_Activity">
+		</activity>
+		<activity android:name=".splash_Activity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+	</application>
+
+</manifest>
